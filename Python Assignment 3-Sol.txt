@@ -1,0 +1,195 @@
+Python Assignment 3:-
+
+
+1.Why are functions advantageous to have in your programs?
+
+Sol: Functions are advantageous to have in programs for several reasons:-
+
+1.Modularity and Reusability: Functions allow you to break down a program into smaller, self-contained modules of code.
+
+2.Code Readability and Maintainability: Functions promote clean and readable code by encapsulating specific tasks or operations
+
+3.Abstraction and Encapsulation: Functions enable abstraction, allowing you to hide the implementation details and provide a high-level interface.
+
+4.Debugging and Error Isolation: Functions provide a modular structure that makes debugging and error isolation easier.
+
+2. When does the code in a function run: when it's specified or when it's called?
+
+Sol: The code in a function runs when the function is called. Functions in programming are designed to be reusable blocks of code that can be 
+      executed   multiple times. The function's code is not executed when it is defined or specified in the program; it is only executed when 
+      the function is called or invoked during the program's execution. 
+
+Eg: def greet():
+    print("Hello, world!")
+
+    greet()  # Calling the function
+
+3.What statement creates a function?
+
+Sol: The def statement is short for "define" and is followed by the function name, parentheses for any parameters, and a colon to 
+     indicate the start of the function's body.
+
+Eg- def function_name(parameter1, parameter2, ...)
+    # Function body
+    # Code to be executed when the function is called
+
+4.What is the difference between a function and a function call?
+
+Sol: the difference between a function and a function call:-
+
+1.Function: A function is a reusable block of code that performs a specific task or a set of operations. 
+  It is a self-contained unit that takes input (arguments or parameters), performs some computations or actions, and optionally
+  returns a value as a result.
+  Functions are defined using the appropriate syntax of the programming language and can be called or invoked multiple times from 
+  different parts of a program.
+
+2.Function Call: A function call, also known as a function invocation, is the act of executing a specific function at a particular point in a program.
+  It is the process of transferring control from the current execution point to the function's code block. When a function is called, the program
+  executes the code within the function's body, utilizing the provided arguments or parameters. 
+  A function call is typically made by using the function's name followed by parentheses, and it may include any required arguments.
+
+Eg- # Function definition
+    def multiply(a, b):
+    return a * b
+
+    # Function call
+    result = multiply(5, 3)
+    print(result)
+
+5.How many global scopes are there in a Python program? How many local scopes?
+
+Sol: In a Python program, there is only one global scope, and it is accessible throughout the entire program.
+     The global scope refers to the outermost level of the program, where variables and functions defined outside any functions or classes reside. 
+     Variables and functions declared in the global scope can be accessed and modified from any part of the program.
+
+     There is one global scope in a Python program, accessible throughout the entire program.
+     Local scopes are created whenever a function is called or a code block is entered, and they are isolated from each other and the global scope.
+
+6.What happens to variables in a local scope when the function call returns?
+
+Sol: When a function call returns in Python, the local variables defined within that function's scope cease to exist. 
+     They are destroyed, and their memory space is released. This process is known as variable cleanup or deallocation.
+
+  Eg- def my_function():
+      x = 10
+      print(x)
+
+      my_function()
+
+7.What is the concept of a return value? Is it possible to have a return value in an expression?
+
+Sol: The concept of a return value relates to functions in programming. A return value is the value that a function produces and sends back to
+     the code that called or invoked the function. When a function completes its execution, it can provide a result or output by using the 
+     return statement.
+
+   Eg- def add_numbers(a, b):
+       return a + b
+
+     result = add_numbers(3, 4)
+     print(result)  # Output: 7
+
+8. If a function does not have a return statement, what is the return value of a call to that function?
+
+Sol: In Python, None is a special built-in value that represents the absence of a value or the lack of a meaningful result. 
+     When a function does not specify a return value, Python assumes that the intended return value is None.
+
+  Eg- def greet():
+    print("Hello, world!")
+
+    result = greet()
+    print(result)  # Output: None
+
+9.How do you make a function variable refer to the global variable?
+
+Sol: To make a function variable refer to the global variable of the same name, you can use the global keyword in Python. 
+     By declaring a variable as global within a function, you indicate that the variable should refer to the global variable with 
+     the same name, rather than creating a new local variable.
+ 
+  Eg- global_var = 10
+
+    def modify_global():
+    global global_var
+    global_var = 20
+
+    print(global_var)  # Output: 10
+    modify_global()
+    print(global_var)  # Output: 20
+
+10.What is the data type of None?
+
+Sol: The data type of None is actually a specific type called NoneType. In Python, NoneType is a built-in type that has only one value, which is None.
+
+  Eg- result = None
+      print(type(result))  # Output: <class 'NoneType'>
+
+In eg result is assigned the value None, and the type() function is used to retrieve its data type, which is NoneType.
+
+11.What does the sentence import areallyourpetsnamederic do?
+
+Sol:In Python, the import keyword is used to import modules or packages, which are pre-defined collections of functions, classes,
+    and variables. By importing a module, we gain access to its contents and can use them in your program.
+
+ eg- import math  # Importing the math module
+
+12. If you had a bacon() feature in a spam module, what would you call it after importing spam?
+
+Sol: If we have imported a module named "spam" that contains a feature or function called bacon(), we can access and call that function 
+     using the module name as a prefix followed by the feature name.
+
+  Eg- import spam
+
+      spam.bacon()
+
+13.What can you do to save a programme from crashing if it encounters an error?
+
+Sol: Within the try block, you place the code that you anticipate might raise an exception. 
+    If an exception occurs within the try block, instead of crashing, the program jumps to the appropriate except block that matches the exception type.
+    we can specify the type of exception you want to catch, such as ValueError, TypeError, or a more generic Exception to catch any type of exception.
+
+  Syntax-
+   
+    try:
+    # Code that may raise an exception
+    # ...
+    except ExceptionType:
+    # Code to handle the exception
+    # ...
+
+Catch Specific Exceptions: Identify the specific types of exceptions that could occur and write separate except blocks to handle each type. This allows you to handle different exceptions in specific ways.
+
+Finally Block: You can use a finally block to specify code that should always be executed, regardless of whether an exception occurred or not. This block is useful for tasks like closing files or releasing resources.
+
+14.What is the purpose of the try clause? What is the purpose of the except clause?
+
+Sol: Purpose of the try clause:
+
+a)The try clause is used to define a block of code where exceptions may occur. It encloses the section of code that is potentially prone to 
+  raising exceptions.
+b)The purpose of the try clause is to indicate that you want to attempt the execution of the code within it, even if it might raise an exception.
+c)If an exception occurs within the try block, the program flow jumps to the appropriate except block that matches the exception type, 
+  bypassing the remaining code in the try block.
+
+Purpose of the except clause:
+
+a)The except clause is used to specify the code that should be executed if a particular exception occurs within the associated try block.
+b)The purpose of the except clause is to catch and handle exceptions. It allows you to define how your program should respond when a specific type of exception is encountered.
+
+
+  Eg- try:
+    # Code that may raise an exception
+    result = 10 / 0  # Division by zero raises an exception
+    except ZeroDivisionError:
+    # Code to handle the ZeroDivisionError exception
+    print("Cannot divide by zero!")
+
+
+
+
+
+
+
+
+
+
+
+
